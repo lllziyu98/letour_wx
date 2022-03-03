@@ -1,0 +1,19 @@
+<!--pages/login/login.wxml-->
+<view class="l-page-login page d-flex justify-content-center">
+  <view class="main">
+    <image src="/images/logo.jpg"></image>
+    <view class="form">
+      <view class="row d-flex align-items-center">
+        <text>账号：</text>
+        <input type="text" placeholder="请输入账号" value="{{entity.account}}" bindinput="changAccount" />
+      </view>
+      <view class="row d-flex align-items-center">
+        <text>密码：</text>
+        <input type="password" placeholder="请输入密码" value="{{entity.password}}" bindinput="changPsd" />
+      </view>
+      <view class="row">
+        <button type="primary" plain="true" bindtap="goLogin">登录</button>
+      </view>
+    </view>
+  </view>
+</view>

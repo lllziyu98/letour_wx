@@ -1,0 +1,44 @@
+/**app.wxss**/
+page {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 100%;
+}
+.page {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.d-flex {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-stretch {
+  align-items: stretch;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.flex-direction-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
