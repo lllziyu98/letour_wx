@@ -5,11 +5,13 @@
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
+  box-sizing: border-box;
+  padding: 0 26rpx;
 }
 .person-top {
   width: 100%;
   box-sizing: border-box;
-  padding: 40rpx 36rpx;
+  padding: 40rpx 0;
 }
 
 .person-top__show image{
@@ -67,4 +69,40 @@
   color: #666;
   margin: 8px 0 0;
   text-align: center;
+}
+
+.person-list {
+  margin-top: 24rpx;
+}
+
+.person-list__card {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 28rpx;
+  background-color: #ffffff;
+  border: 1px solid #f2f2f2;
+  padding: 24rpx;
+}
+
+.person-list__title {
+  font-size: 34rpx;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #000000;
+  margin: 0 0 20rpx;
+}
+
+.person-list__item {
+  flex: 0 0 48%;
+  width: 0;
+  font-size: 28rpx;
+  font-weight: normal;
+  line-height: 1.2;
+  color: #0f0e0e;
+  text-align: center;
+  margin: 0 0 12rpx;
+}
+
+.person-list__item image {
+  width: 100%;
 }
