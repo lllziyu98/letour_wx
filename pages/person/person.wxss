@@ -1,0 +1,70 @@
+/* pages/person/person.wxss */
+.l-page-person {
+  min-height: 100vh;
+  background-image: url(https://636c-cloud1-1g8hzwjf0b895b94-1305340622.tcb.qcloud.la/images/person-bg.JPG);
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.person-top {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 36rpx;
+}
+
+.person-top__show image{
+  flex: 0 0 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.person-top__cont {
+  margin-left: 10px;
+}
+
+.person-top__cont .title {
+  font-size: 40rpx;
+  line-height: 1.2;
+  color: #1f1919;
+}
+
+.person-top__cont .name {
+  font-size: 38rpx;
+  line-height: 1.2;
+  margin: 14rpx 0 0;
+  color: #1f1919;
+}
+
+.info-num {
+  box-sizing: border-box;
+  margin: 20rpx 0 0;
+  border: 2rpx solid #444;
+}
+
+.info-num__item {
+  flex: 1 0;
+  width: 0;
+  border-right: 1px solid #444;
+  padding: 10px 0;
+}
+
+.info-num__item:last-child {
+  border-color: transparent;
+}
+
+.info-num__txt {
+  font-size: 40rpx;
+  line-height: 40rpx;
+  font-weight: 700;
+  color: #444;
+  text-align: center;
+  margin: 0;
+}
+
+.info-num__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #666;
+  margin: 8px 0 0;
+  text-align: center;
+}

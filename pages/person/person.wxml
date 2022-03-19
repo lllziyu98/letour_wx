@@ -1,0 +1,30 @@
+<!--pages/person/person.wxml-->
+<view class="l-page-person page">
+  <view class="person-top">
+    <view class="person-top__show d-flex align-items-start">
+      <image src="{{base_url + userInfo.img}}"></image>
+      <view class="person-top__cont">
+        <view class="title">{{userInfo.account}}</view>
+        <view class="name">{{userInfo.realname}}</view>
+      </view>
+    </view>
+    <view class="info-num  d-flex align-items-stretch">
+      <view class="info-num__item">
+        <view class="info-num__txt">{{num.attention}}</view>
+        <view class="info-num__title">关注</view>
+      </view>
+      <view class="info-num__item">
+        <view class="info-num__txt">{{num.collect}}</view>
+        <view class="info-num__title">收藏</view>
+      </view>
+      <view class="info-num__item">
+        <view class="info-num__txt">{{num.fan}}</view>
+        <view class="info-num__title">粉丝</view>
+      </view>
+      <view class="info-num__item">
+        <view class="info-num__txt">{{num.like}}</view>
+        <view class="info-num__title">喜欢</view>
+      </view>
+    </view>
+  </view>
+</view>

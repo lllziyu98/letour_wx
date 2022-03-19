@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/person/person",
     "pages/login/login"
   ],
   "window": {
@@ -8,6 +9,26 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "乐游",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#8A8A8A",
+    "selectedColor": "#FFA500",
+    "backgroundColor": "#white",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/essay.png",
+        "selectedIconPath": "/images/essay-active.png"
+      }, {
+        "pagePath": "pages/person/person",
+        "text": "个人中心",
+        "iconPath": "/images/person.png",
+        "selectedIconPath": "/images/person-active.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents"

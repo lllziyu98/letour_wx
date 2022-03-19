@@ -47,7 +47,7 @@ Page({
           key:"userInfo",
           data: JSON.stringify(data.userInfo)
         })
-        wx.redirectTo({
+        wx.switchTab({
           url: '/pages/index/index'
         })
       } else {
