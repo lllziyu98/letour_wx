@@ -1,7 +1,23 @@
 <!--index.wxml-->
 <view class="l-page-index page">
   <view class="index-top d-flex align-items-stretch">
-    <input class="index-top__input" placeholder="搜索文章"/>
+    <input class="index-top__input" placeholder="搜索文章" />
     <button class="index-top__btn"></button>
   </view>
+  <scroll-view scroll-y="true" class="index-main" refresher-enabled="{{true}}" refresher-triggered="refreshing" bindrefresherrefresh='reLoad' bindscrolltolower="loadList" style="height: {{height}}px">
+    <view wx:for="{{essayList}}" wx:key="index" class="index-essay-list__row">
+      <image class="index-essay-img" src="{{base_url + item.titleimg}}"></image>
+      <view class="index-essay-cont">
+        <view class="index-essay-title">{{item.title}}</view>
+        <rich-text class="index-essay-text" nodes="{{item.cont}}"></rich-text>
+        <!-- <view class="index-essay-text" >{{item.cont}}</view> -->
+        <view class="index-essay-bottom d-flex align-items-center">
+          <image class="index-essay-bottom-icon" src="/images/person-bg.JPG"></image>
+          <view class="index-essay-bottom-area">{{ item.areaName }}，by</view>
+          <image class="index-essay-bottom-img" src="{{base_url + item.user_img}}"></image>
+          <view class="index-essay-bottom-name">{{ item.realname || '' }}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
 </view>
