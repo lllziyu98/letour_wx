@@ -31,7 +31,7 @@ Page({
       })
     } else if (type === 'plan') {
       wx.navigateTo({
-        url: '/pages/essay/essay?id=' + self.data.planList[e.currentTarget.dataset.index].id
+        url: '/pages/plan/plan?id=' + self.data.planList[e.currentTarget.dataset.index].id
       })
     } else if (type === 'collect') {
       wx.navigateTo({

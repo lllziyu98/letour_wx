@@ -1,0 +1,14 @@
+<!--pages/plan/plan.wxml-->
+<view class="l-page-plan page">
+  <view class="plan-title">{{entity.title}}</view>
+  <view class="plan-list">
+    <view wx:for="{{entity.cont}}" wx:key="index" class="plan-list__day">
+      <view class="plan-list__title d-flex align-items-center">
+        <view class="day">Day{{index + 1}}</view>
+        <view wx:if="{{item.status}}" class="day success">已完成</view>
+        <view wx:else class="day warning">待打卡</view>
+      </view>
+      <rich-text class="plan-main" nodes="{{item.cont}}"></rich-text>
+    </view>
+  </view>
+</view>

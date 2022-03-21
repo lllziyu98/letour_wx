@@ -8,5 +8,13 @@ export default {
     Util.sendGetRequest(url, data, (res) => {
       self.dealResponse(res.data, callback, errorback)
     })
-  }
+  },
+  getPlanDetail(id, callback, errorback) {
+    let self = this
+    let url = '/plan/detail?id=' + id
+    let data = {}
+    Util.sendGetRequest(url, data, (res) => {
+      self.dealResponse(res.data, callback, errorback)
+    })
+  },
 }

@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/person/person",
     "pages/login/login",
-    "pages/essay/essay"
+    "pages/essay/essay",
+    "pages/plan/plan"
   ],
   "window": {
     "backgroundTextStyle": "light",

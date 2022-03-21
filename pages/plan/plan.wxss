@@ -1,0 +1,51 @@
+/* pages/plan/plan.wxss */
+.l-page-plan {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 40rpx 26rpx;
+}
+
+.plan-title {
+  font-size: 40rpx;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #000000;
+  text-align: center;
+  margin: 0 0 20rpx;
+}
+
+.plan-list {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 20rpx 0 0;
+}
+
+.plan-list__day {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16rpx 0 0;
+}
+
+.plan-list__day:first-child {
+  margin: 0;
+}
+
+.day {
+  font-size: 34rpx;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #000000;
+  margin: 0 20rpx 0 0;
+}
+
+.success {
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #67C23A;
+}
+
+.warning {
+  font-size: 28rpx;
+  font-weight: normal;
+  color: orange;
+}
