@@ -1,0 +1,14 @@
+<!--pages/essay/essay.wxml-->
+<view class="l-page-essay page">
+  <view class="essay-title">{{entity.title}}</view>
+  <rich-text class="essay-main" nodes="{{entity.cont}}"></rich-text>
+  <view class="essay-commont">
+    <view class="commont-title">热门评论</view>
+    <view class="essay-commont-list">
+      <view wx:for="{{essayCommentList}}" wx:key="index" class="essay-commont-item">
+        <view class="text">{{ item.cont }}</view>
+        <view class="time">{{ item.time }}</view>
+      </view>
+    </view>
+  </view>
+</view>

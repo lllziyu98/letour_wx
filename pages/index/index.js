@@ -19,6 +19,12 @@ Page({
     utils: {},
     refreshing: false
   },
+  goEssayDetail(e) {
+    let self = this
+    wx.navigateTo({
+      url: '/pages/essay/essay?id=' + self.data.essayList[e.currentTarget.dataset.index].id
+    })
+  },
   changeSearch (e) {
     let search = e.detail.value
     this.setData({

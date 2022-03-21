@@ -23,4 +23,20 @@ export default {
       self.dealResponse(res.data, callback, errorback)
     })
   },
+  getEssayDetail(id, callback, errorback) {
+    let self = this
+    let url = '/essay/detail?id=' + id
+    let data = {}
+    Util.sendGetRequest(url, data, (res) => {
+      self.dealResponse(res.data, callback, errorback)
+    })
+  },
+  getEssayCommentList(id, callback, errorback) {
+    let self = this
+    let url = '/comment/list?essay_id=' + id
+    let data = {}
+    Util.sendGetRequest(url, data, (res) => {
+      self.dealResponse(res.data, callback, errorback)
+    })
+  }
 }

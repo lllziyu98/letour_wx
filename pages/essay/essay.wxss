@@ -1,0 +1,70 @@
+/* pages/essay/essay.wxss */
+.l-page-essay {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 40rpx 26rpx;
+}
+
+.essay-title {
+  font-size: 40rpx;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #000000;
+  text-align: center;
+  margin: 0 0 20rpx;
+}
+
+.essay-main {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.essay-main image {
+  width: 100%;
+}
+
+.essay-commont {
+  margin: 38rpx 0 0;
+}
+
+.commont-title {
+  font-size: 36rpx;
+  line-height: 1.2;
+  color: #666;
+  margin: 0;
+  padding: 16rpx 0;
+  border-bottom: 4rpx solid #666;
+}
+
+.essay-commont-list {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.essay-commont-item {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16rpx;
+  border: 2rpx solid #f8ca75;
+  border-radius: 16rpx;
+  margin-top: 16rpx;
+}
+
+.essay-commont-item:first-child {
+  margin: 0;
+}
+
+.essay-commont-item .text {
+  font-size: 30rpx;
+  line-height: 1.2;
+  color: rgba(40, 44, 41, 1);
+  margin: 0;
+}
+
+.essay-commont-item .time {
+  font-size: 24rpx;
+  line-height: 1.2;
+  color: #666666;
+  margin: 8rpx 0 0;
+}

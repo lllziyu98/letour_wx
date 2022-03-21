@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/person/person",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/essay/essay"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,7 +23,8 @@
         "text": "攻略",
         "iconPath": "/images/essay.png",
         "selectedIconPath": "/images/essay-active.png"
-      }, {
+      },
+      {
         "pagePath": "pages/person/person",
         "text": "个人中心",
         "iconPath": "/images/person.png",
