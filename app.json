@@ -19,7 +19,7 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
+        "text": "攻略",
         "iconPath": "/images/essay.png",
         "selectedIconPath": "/images/essay-active.png"
       }, {
