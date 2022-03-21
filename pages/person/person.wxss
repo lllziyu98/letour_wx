@@ -82,6 +82,11 @@
   background-color: #ffffff;
   border: 1px solid #f2f2f2;
   padding: 24rpx;
+  margin: 0 0 24rpx;
+}
+
+.person-list__card:last-child {
+  margin: 0;
 }
 
 .person-list__title {

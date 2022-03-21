@@ -1,6 +1,7 @@
 // pages/person/person.js
 const app = getApp()
 import utils from '../../utils/util'
+import Api from '../../api/api'
 
 Page({
 
@@ -15,9 +16,20 @@ Page({
       collect: 0,
       fan: 0,
       like: 0
-    }
+    },
+    essayList: []
   },
-
+  getMyEssayList () {
+    let self = this
+    Api.getMyEssayList(app.globalData.userInfo.id, (data) => {
+      console.log('getMyEssayList', data)
+      self.setData({essayList: data || []})
+      // self.essayList = data || []
+    }, () => {
+      self.setData({essayList: []})
+      // self.essayList = []
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -32,6 +44,7 @@ Page({
       }
     })
     console.log('123', this.data.userInfo)
+    this.getMyEssayList()
   },
 
   /**

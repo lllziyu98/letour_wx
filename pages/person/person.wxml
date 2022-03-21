@@ -31,17 +31,36 @@
     <view class="person-list__card">
       <view class="person-list__title">我的游记</view>
       <view class="d-flex justify-content-space-between align-items-center flex-wrap">
-        <view class="person-list__item">
-          <image src="/images/person-bg.JPG"></image>
-          <view>标题标题</view>
+        <view wx:for="{{essayList}}" wx:key="index" class="person-list__item">
+          <image src="{{base_url + item.titleimg}}"></image>
+          <view>{{item.title}}</view>
         </view>
-        <view class="person-list__item">
-          <image src="/images/person-bg.JPG"></image>
-          <view>标题标题</view>
+      </view>
+    </view>
+    <view class="person-list__card">
+      <view class="person-list__title">我的计划</view>
+      <view class="d-flex justify-content-space-between align-items-center flex-wrap">
+        <view wx:for="{{essayList}}" wx:key="index" class="person-list__item">
+          <image src="{{base_url + item.titleimg}}"></image>
+          <view>{{item.title}}</view>
         </view>
-        <view class="person-list__item">
-          <image src="/images/person-bg.JPG"></image>
-          <view>标题标题</view>
+      </view>
+    </view>
+    <view class="person-list__card">
+      <view class="person-list__title">我的收藏</view>
+      <view class="d-flex justify-content-space-between align-items-center flex-wrap">
+        <view wx:for="{{essayList}}" wx:key="index" class="person-list__item">
+          <image src="{{base_url + item.titleimg}}"></image>
+          <view>{{item.title}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="person-list__card">
+      <view class="person-list__title">我喜欢</view>
+      <view class="d-flex justify-content-space-between align-items-center flex-wrap">
+        <view wx:for="{{essayList}}" wx:key="index" class="person-list__item">
+          <image src="{{base_url + item.titleimg}}"></image>
+          <view>{{item.title}}</view>
         </view>
       </view>
     </view>
