@@ -4,6 +4,7 @@ import areaUtils from '../../utils/area-utils'
 import utils from '../../utils/util'
 import userUtils from '../../utils/user-utils'
 import Api from '../../api/api'
+const Form = require('../../utils/formData.js')
 
 Page({
 
@@ -17,22 +18,46 @@ Page({
     isLike: false,
     isCollect: false,
     isAtten: false,
-    essayCommentList: []
+    essayCommentList: [],
+    commont: ''
+  },
+  changeCommont(e) {
+    let commont = e.detail.value
+    this.setData({
+      commont
+    })
+  },
+  pushCommon() {
+    let self = this
+    let formData = new Form()
+    formData.append("cont", self.data.commont)
+    formData.append("time", new Date())
+    formData.append("essay_id", self.data.entity.id)
+    formData.append("user_id", app.globalData.userInfo.id)
+    let data = formData.getData();
+    Api.pushComment(data.buffer, (data) => {
+      self.setData({commont: ''})
+      self.getCommentList(self)
+    })
   },
   getAreaList() {
     let self = this
     Api.getAreaList('', '', (data) => {
-      self.setData({areaList: areaUtils.createList(data) || []})
+      self.setData({
+        areaList: areaUtils.createList(data) || []
+      })
       self.getEssayDetail(self)
       self.getCommentList(self)
     }, () => {
-      self.setData({areaList: []})
+      self.setData({
+        areaList: []
+      })
     })
   },
   getEssayDetail(self) {
     Api.getEssayDetail(self.data.id, (data) => {
       data.cont = JSON.parse(decodeURIComponent(data.cont))
-      data.cont = data.cont.replace(/\<img/g,'<img style="width:100%;height:auto;display:block"');
+      data.cont = data.cont.replace(/\<img/g, '<img style="width:100%;height:auto;display:block"');
       data.areaName = utils.formatOptions(data.area_id, self.data.areaList)
       console.log('getEssayDetail', data)
       self.setData({
@@ -49,9 +74,13 @@ Page({
   getCommentList(self) {
     Api.getEssayCommentList(self.data.id, (data) => {
       console.log('getEssayCommentList', data)
-      self.setData({essayCommentList: data || []})
+      self.setData({
+        essayCommentList: data || []
+      })
     }, () => {
-      self.setData({essayCommentList: []})
+      self.setData({
+        essayCommentList: []
+      })
     })
   },
   /**

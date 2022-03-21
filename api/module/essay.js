@@ -38,5 +38,12 @@ export default {
     Util.sendGetRequest(url, data, (res) => {
       self.dealResponse(res.data, callback, errorback)
     })
-  }
+  },
+  pushComment (formData, callback, errorCallback) {
+    let self = this
+    let url = '/comment/push'
+    Util.sendPutRequest(url, formData, (res) => {
+      self.dealResponse(res.data, callback, errorback)
+    })
+  },
 }

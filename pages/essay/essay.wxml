@@ -10,5 +10,11 @@
         <view class="time">{{ item.time }}</view>
       </view>
     </view>
+    <!-- <view class="essay-commont-push">
+      <textarea class="essay-commont__input" placeholder="评论..." value="{{commont}}" bindinput="changeCommont" />
+      <view class="btn-bg d-flex">
+        <view class="btn" bindtap="pushCommon">评论</view>
+      </view>
+    </view> -->
   </view>
 </view>
