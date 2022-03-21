@@ -22,47 +22,84 @@ Page({
     likeList: [],
     collectList: []
   },
-  getMyEssayList () {
+  goEssayDetail(e) {
+    let self = this
+    let type = e.currentTarget.dataset.type
+    if (type === 'essay') {
+      wx.navigateTo({
+        url: '/pages/essay/essay?id=' + self.data.essayList[e.currentTarget.dataset.index].id
+      })
+    } else if (type === 'plan') {
+      wx.navigateTo({
+        url: '/pages/essay/essay?id=' + self.data.planList[e.currentTarget.dataset.index].id
+      })
+    } else if (type === 'collect') {
+      wx.navigateTo({
+        url: '/pages/essay/essay?id=' + self.data.collectList[e.currentTarget.dataset.index].id
+      })
+    } else if (type === 'like') {
+      wx.navigateTo({
+        url: '/pages/essay/essay?id=' + self.data.likeList[e.currentTarget.dataset.index].id
+      })
+    }
+  },
+  getMyEssayList() {
     let self = this
     Api.getMyEssayList(app.globalData.userInfo.id, (data) => {
       console.log('getMyEssayList', data)
-      self.setData({essayList: data || []})
+      self.setData({
+        essayList: data || []
+      })
       // self.essayList = data || []
     }, () => {
-      self.setData({essayList: []})
+      self.setData({
+        essayList: []
+      })
       // self.essayList = []
     })
   },
-  getMyPlanList () {
+  getMyPlanList() {
     let self = this
     Api.getMyPlanList(app.globalData.userInfo.id, (data) => {
       console.log('getMyPlanList', data)
-      self.setData({planList: data.list || []})
+      self.setData({
+        planList: data.list || []
+      })
       // self.essayList = data || []
     }, () => {
-      self.setData({planList: []})
+      self.setData({
+        planList: []
+      })
       // self.essayList = []
     })
   },
-  getMyLikeList () {
+  getMyLikeList() {
     let self = this
     Api.getMyLikeList(app.globalData.userInfo.like, 0, (data) => {
       console.log('getMyLikeList', data)
-      self.setData({likeList: data || []})
+      self.setData({
+        likeList: data || []
+      })
       // self.essayList = data || []
     }, () => {
-      self.setData({likeList: []})
+      self.setData({
+        likeList: []
+      })
       // self.essayList = []
     })
   },
-  getMyCollectList () {
+  getMyCollectList() {
     let self = this
     Api.getMyLikeList(app.globalData.userInfo.like, 1, (data) => {
       console.log('getMyCollectList', data)
-      self.setData({collectList: data || []})
+      self.setData({
+        collectList: data || []
+      })
       // self.essayList = data || []
     }, () => {
-      self.setData({collectList: []})
+      self.setData({
+        collectList: []
+      })
       // self.essayList = []
     })
   },
