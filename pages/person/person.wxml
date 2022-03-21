@@ -30,7 +30,7 @@
   <view class="person-list">
     <view class="person-list__card">
       <view class="person-list__title">我的游记</view>
-      <view class="d-flex justify-content-space-between align-items-center flex-wrap">
+      <view wx:if="{{essayList.length !== 0}}" class="d-flex justify-content-space-between align-items-center flex-wrap">
         <view wx:for="{{essayList}}" wx:key="essayIndex" class="person-list__item">
           <icon wx:if="{{item.status === '1'}}" class="person-lis-item__icon" type="success" size="20"></icon>
           <icon wx:else class="person-lis-item__icon" type="warn" size="20"></icon>
@@ -38,10 +38,11 @@
           <view>{{item.title}}</view>
         </view>
       </view>
+      <view wx:if="{{essayList.length === 0}}" class="no-data d-flex justify-content-center align-items-center">暂无游记</view>
     </view>
     <view class="person-list__card">
       <view class="person-list__title">我的计划</view>
-      <view class="d-flex justify-content-space-between align-items-center flex-wrap">
+      <view wx:if="{{planList.length !== 0}}" class="d-flex justify-content-space-between align-items-center flex-wrap">
         <view wx:for="{{planList}}" wx:for-item="plan" wx:key="planIndex" class="person-list__item">
           <icon wx:if="{{plan.is_push === '1'}}" class="person-lis-item__icon" type="success" size="20"></icon>
           <icon wx:else class="person-lis-item__icon" type="warn" size="20"></icon>
@@ -49,24 +50,27 @@
           <view>{{plan.title}}</view>
         </view>
       </view>
+      <view wx:if="{{planList.length === 0}}" class="no-data d-flex justify-content-center align-items-center">暂无计划</view>
     </view>
     <view class="person-list__card">
       <view class="person-list__title">我的收藏</view>
-      <view class="d-flex justify-content-space-between align-items-center flex-wrap">
-        <view wx:for="{{essayList}}" wx:key="index" class="person-list__item">
+      <view wx:if="{{collectList.length !== 0}}" class="d-flex justify-content-space-between align-items-center flex-wrap">
+        <view wx:for="{{collectList}}" wx:key="index" class="person-list__item">
           <image src="{{base_url + item.titleimg}}"></image>
           <view>{{item.title}}</view>
         </view>
       </view>
+      <view wx:if="{{collectList.length === 0}}" class="no-data d-flex justify-content-center align-items-center">暂无收藏</view>
     </view>
     <view class="person-list__card">
       <view class="person-list__title">我喜欢</view>
-      <view class="d-flex justify-content-space-between align-items-center flex-wrap">
-        <view wx:for="{{essayList}}" wx:key="index" class="person-list__item">
+      <view wx:if="{{likeList.length !== 0}}" class="d-flex justify-content-space-between align-items-center flex-wrap">
+        <view wx:for="{{likeList}}" wx:key="index" class="person-list__item">
           <image src="{{base_url + item.titleimg}}"></image>
           <view>{{item.title}}</view>
         </view>
       </view>
+      <view wx:if="{{likeList.length === 0}}" class="no-data d-flex justify-content-center align-items-center">暂无喜欢</view>
     </view>
   </view>
 </view>

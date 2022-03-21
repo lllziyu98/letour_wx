@@ -18,7 +18,9 @@ Page({
       like: 0
     },
     essayList: [],
-    planList: []
+    planList: [],
+    likeList: [],
+    collectList: []
   },
   getMyEssayList () {
     let self = this
@@ -42,6 +44,28 @@ Page({
       // self.essayList = []
     })
   },
+  getMyLikeList () {
+    let self = this
+    Api.getMyLikeList(app.globalData.userInfo.like, 0, (data) => {
+      console.log('getMyLikeList', data)
+      self.setData({likeList: data || []})
+      // self.essayList = data || []
+    }, () => {
+      self.setData({likeList: []})
+      // self.essayList = []
+    })
+  },
+  getMyCollectList () {
+    let self = this
+    Api.getMyLikeList(app.globalData.userInfo.like, 1, (data) => {
+      console.log('getMyCollectList', data)
+      self.setData({collectList: data || []})
+      // self.essayList = data || []
+    }, () => {
+      self.setData({collectList: []})
+      // self.essayList = []
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -58,6 +82,8 @@ Page({
     console.log('123', this.data.userInfo)
     this.getMyEssayList()
     this.getMyPlanList()
+    this.getMyLikeList()
+    this.getMyCollectList()
   },
 
   /**

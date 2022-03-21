@@ -6,15 +6,16 @@
   background-size: cover;
   background-repeat: no-repeat;
   box-sizing: border-box;
-  padding: 0 26rpx;
+  padding: 0 26rpx 40rpx;
 }
+
 .person-top {
   width: 100%;
   box-sizing: border-box;
   padding: 40rpx 0;
 }
 
-.person-top__show image{
+.person-top__show image {
   flex: 0 0 120rpx;
   height: 120rpx;
   border-radius: 50%;
@@ -87,6 +88,12 @@
 
 .person-list__card:last-child {
   margin: 0;
+}
+
+.person-list__card .no-data {
+  width: 100%;
+  box-sizing: border-box;
+  height: 280rpx;
 }
 
 .person-list__title {
