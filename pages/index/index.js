@@ -19,6 +19,12 @@ Page({
     utils: {},
     refreshing: false
   },
+  changeSearch (e) {
+    let search = e.detail.value
+    this.setData({
+      search
+    })
+  },
   getAreaList() {
     let self = this
     Api.getAreaList('', '', (data) => {
