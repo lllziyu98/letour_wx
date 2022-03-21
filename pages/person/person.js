@@ -17,7 +17,8 @@ Page({
       fan: 0,
       like: 0
     },
-    essayList: []
+    essayList: [],
+    planList: []
   },
   getMyEssayList () {
     let self = this
@@ -27,6 +28,17 @@ Page({
       // self.essayList = data || []
     }, () => {
       self.setData({essayList: []})
+      // self.essayList = []
+    })
+  },
+  getMyPlanList () {
+    let self = this
+    Api.getMyPlanList(app.globalData.userInfo.id, (data) => {
+      console.log('getMyPlanList', data)
+      self.setData({planList: data.list || []})
+      // self.essayList = data || []
+    }, () => {
+      self.setData({planList: []})
       // self.essayList = []
     })
   },
@@ -45,6 +57,7 @@ Page({
     })
     console.log('123', this.data.userInfo)
     this.getMyEssayList()
+    this.getMyPlanList()
   },
 
   /**

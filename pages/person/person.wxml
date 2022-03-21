@@ -31,7 +31,7 @@
     <view class="person-list__card">
       <view class="person-list__title">我的游记</view>
       <view class="d-flex justify-content-space-between align-items-center flex-wrap">
-        <view wx:for="{{essayList}}" wx:key="index" class="person-list__item">
+        <view wx:for="{{essayList}}" wx:key="essayIndex" class="person-list__item">
           <icon wx:if="{{item.status === '1'}}" class="person-lis-item__icon" type="success" size="20"></icon>
           <icon wx:else class="person-lis-item__icon" type="warn" size="20"></icon>
           <image src="{{base_url + item.titleimg}}"></image>
@@ -42,9 +42,11 @@
     <view class="person-list__card">
       <view class="person-list__title">我的计划</view>
       <view class="d-flex justify-content-space-between align-items-center flex-wrap">
-        <view wx:for="{{essayList}}" wx:key="index" class="person-list__item">
-          <image src="{{base_url + item.titleimg}}"></image>
-          <view>{{item.title}}</view>
+        <view wx:for="{{planList}}" wx:for-item="plan" wx:key="planIndex" class="person-list__item">
+          <icon wx:if="{{plan.is_push === '1'}}" class="person-lis-item__icon" type="success" size="20"></icon>
+          <icon wx:else class="person-lis-item__icon" type="warn" size="20"></icon>
+          <image src="{{base_url + plan.titleimg}}"></image>
+          <view>{{plan.title}}</view>
         </view>
       </view>
     </view>
