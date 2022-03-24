@@ -46,4 +46,12 @@ export default {
       self.dealResponse(res.data, callback, errorback)
     })
   },
+  addPageViews(id, callback, errorback) {
+    let self = this
+    let url = '/essay/add/pageviews?id=' + id
+    let data = {}
+    Util.sendGetRequest(url, data, (res) => {
+      self.dealResponse(res.data, callback, errorback)
+    })
+  }
 }

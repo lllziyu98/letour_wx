@@ -12,6 +12,8 @@
         <rich-text class="index-essay-text" nodes="{{item.cont}}"></rich-text>
         <!-- <view class="index-essay-text" >{{item.cont}}</view> -->
         <view class="index-essay-bottom d-flex align-items-center">
+          <image class="index-essay-bottom-icon" src="/images/views.png"></image>
+          <view class="index-essay-bottom-area">{{ item.pageviews }}</view>
           <image class="index-essay-bottom-icon" src="/images/essay-love.png"></image>
           <view class="index-essay-bottom-area">{{ item.areaName }}，by</view>
           <image class="index-essay-bottom-img" src="{{base_url + item.user_img}}"></image>

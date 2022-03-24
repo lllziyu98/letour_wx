@@ -48,6 +48,7 @@ Page({
       })
       self.getEssayDetail(self)
       self.getCommentList(self)
+      self.addPageViews(self)
     }, () => {
       self.setData({
         areaList: []
@@ -82,6 +83,9 @@ Page({
         essayCommentList: []
       })
     })
+  },
+  addPageViews(self) {
+    Api.addPageViews(self.data.id, ()=> {}, ()=> {})
   },
   /**
    * 生命周期函数--监听页面加载
